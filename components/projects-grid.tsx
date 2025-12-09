@@ -11,7 +11,7 @@ const projects = [
   {
     title: "SecureHire",
     description:
-      "Plataforma de reclutamiento impulsada por IA. Conecta empresas con candidatos calificados mediante análisis inteligente de CVs y matching automático.",
+      "SecureHire es una plataforma web de reclutamiento desarrollada bajo el modelo SaaS, que integra inteligencia artificial para optimizar los procesos de selección de personal. La aplicación analiza y resume automáticamente currículums, evaluaciones y permite realizar comparaciones entre los candidatos para asistir a los reclutadores en la toma de decisiones. Presenta una arquitectura RESTful implementada con Java Spring Boot, MongoDB y Next.js. Reduce un 50% las tareas manuales del reclutador, mejora un 30% la precisión del filtrado con IA y acelera en un 30% el proceso completo de contratación.",
     tech: ["Java", "Spring Boot", "React", "MongoDB", "AI", "Next.js"],
     image: "/images/SecureHireLogo.png",
     github: "https://github.com/marcospirchio/SecureHire",
@@ -20,16 +20,16 @@ const projects = [
   {
     title: "Nordic Home",
     description:
-      "E-commerce moderno con diseño minimalista. Carrito de compras, gestión de productos, pasarela de pagos y panel de administración completo.",
+      "Nordic Home es una solución de comercio electrónico desarrollada desde cero para modernizar la presencia digital de PyMEs y negocios locales. Permite a los usuarios explorar un catálogo dinámico, filtrar productos y generar órdenes de compra que se envían directamente al WhatsApp del vendedor, eliminando pasarelas de pago costosas y comisiones.\nEl código es altamente reutilizable y escalable, lo que me permite ofrecer soluciones web personalizadas a comercios locales de manera rápida y eficiente, adaptando la estética y funcionalidad a la identidad de cada marca.",
+
     tech: ["React", "Next.js"],
     image: "/images/Nordic-Home-Imagen.png",
-    github: "https://github.com/marcospirchio/Nordic-Home-Muebles",
     live: "https://nordic-home-muebles.vercel.app/",
   },
   {
     title: "RuteAR",
     description:
-      "Aplicación de optimización de rutas logísticas en Argentina. Calcula las mejores rutas considerando tráfico, distancia y tiempo real.",
+      "RuteAR es una aplicación web diseñada para optimizar la planificación de viajes en auto. Permite a los usuarios calcular con precisión el costo total de un recorrido, integrando gastos de combustible y tarifas de peajes en tiempo real. La app utiliza la Google Maps Platform para obtener rutas y telemetría exacta, combinándola con una base de datos propia de vehículos para estimar el consumo personalizado según el modelo del auto.",
     tech: ["React", "Next.js", "Google Maps API"],
     image: "/images/Rutear_Imagen.png",
     github: "https://github.com/marcospirchio/CalculadoraDeCombustible",
@@ -38,7 +38,7 @@ const projects = [
   {
     title: "Propsuite",
     description:
-      "Sistema completo de gestión inmobiliaria con módulos de propiedades, clientes, contratos y reportes. Interfaz intuitiva y análisis en tiempo real.",
+      "PropSuite es una aplicación web desarrollada bajo el modelo SaaS, orientada a la gestión integral de edificios y consorcios. Permite administrar unidades, propietarios, inquilinos y reclamos desde una plataforma centralizada y segura. Presenta una arquitectura RESTful implementada con Java Spring Boot, SQL Server y React.",
     tech: ["Java", "Spring Boot", "SQL Server", "React"],
     image: "/images/Propsuite.png",
     github: "https://github.com/marcospirchio/Propsuite",
@@ -101,7 +101,7 @@ export function ProjectsGrid() {
                   <div className="space-y-4 flex-grow">
                     <h3 className="text-2xl font-bold text-neon-blue">{project.title}</h3>
 
-                    <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{project.description}</p>
 
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech) => (
