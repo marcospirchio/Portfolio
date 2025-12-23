@@ -35,7 +35,7 @@ export function HeroSection() {
               transition={{ delay: 0.4 }}
               className="text-lg md:text-xl text-muted-foreground leading-relaxed"
             >
-              Creo soluciones digitales robustas y a medida. Especializado en transformar ideas complejas en sistemas
+              Creo soluciones digitales, robustas y a medida. Especializado en transformar ideas complejas en sistemas
               funcionales.
             </motion.p>
 
