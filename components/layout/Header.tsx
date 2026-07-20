@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { FileText, Menu, Moon, Sun, X } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { useTheme } from "@/lib/theme/ThemeProvider";
 import { Button, LinkButton } from "@/components/ui/Button";
+
+const CV_URL = "/cv/Marcos-Pirchio-Giani-CV.pdf";
 
 const NAV_ITEMS = [
   { id: "projects", key: "nav.work" },
@@ -82,6 +84,16 @@ export function Header() {
             <span className="mx-1 text-muted">/</span>
             <span className={language === "en" ? "text-accent" : ""}>EN</span>
           </button>
+          <LinkButton
+            href={CV_URL}
+            external
+            variant="outline"
+            size="md"
+            aria-label={t("nav.cvAriaLabel")}
+          >
+            <FileText className="h-4 w-4" />
+            {t("nav.cv")}
+          </LinkButton>
           <LinkButton href="#contact" size="md" onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }}>
             {t("nav.letsTalk")}
           </LinkButton>
@@ -118,7 +130,7 @@ export function Header() {
               </Button>
             ))}
           </div>
-          <div className="mt-4 flex items-center gap-3">
+          <div className="mt-4 flex flex-wrap items-center gap-3">
             <button
               onClick={toggleTheme}
               aria-label={theme === "light" ? "Activar modo oscuro" : "Activar modo claro"}
@@ -135,6 +147,16 @@ export function Header() {
               <span className="mx-1 text-muted">/</span>
               <span className={language === "en" ? "text-accent" : ""}>EN</span>
             </button>
+            <LinkButton
+              href={CV_URL}
+              external
+              variant="outline"
+              aria-label={t("nav.cvAriaLabel")}
+              onClick={() => setMenuOpen(false)}
+            >
+              <FileText className="h-4 w-4" />
+              {t("nav.cv")}
+            </LinkButton>
             <LinkButton
               href="#contact"
               className="flex-1"

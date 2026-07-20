@@ -37,7 +37,7 @@ export function About() {
               </div>
               <div>
                 <p className="text-xl font-medium text-fg">Marcos Pirchio Giani</p>
-                <p className="text-sm text-muted">Técnico en Desarrollo de Software</p>
+                <p className="text-sm text-muted">{t("about.jobTitle")}</p>
                 <p className="text-sm text-muted">Buenos Aires, Argentina</p>
               </div>
             </div>

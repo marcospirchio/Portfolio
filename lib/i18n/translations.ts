@@ -10,6 +10,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "nav.contact": "Contacto",
     "nav.letsTalk": "Hablemos",
     "nav.langSwitchLabel": "Cambiar a inglés",
+    "nav.cv": "CV",
+    "nav.cvAriaLabel": "Ver o descargar CV en PDF",
 
     "hero.role": "Desarrollador Full Stack",
     "hero.subtitle":
@@ -33,6 +35,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     "about.eyebrow": "Sobre mí",
     "about.title": "Construyo software entendiendo primero el problema",
+    "about.jobTitle": "Técnico en Desarrollo de Software",
     "about.bio1":
       "Soy desarrollador de software especializado en construir aplicaciones web, sistemas de gestión y automatizaciones orientadas a problemas concretos. Trabajo principalmente con Java, Spring Boot, React, Python y bases de datos, combinando desarrollo técnico con una mirada práctica sobre el producto y el negocio.",
     "about.bio2":
@@ -83,6 +86,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "nav.contact": "Contact",
     "nav.letsTalk": "Let's talk",
     "nav.langSwitchLabel": "Switch to Spanish",
+    "nav.cv": "CV",
+    "nav.cvAriaLabel": "View or download CV as PDF",
 
     "hero.role": "Full Stack Developer",
     "hero.subtitle":
@@ -106,10 +111,11 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     "about.eyebrow": "About me",
     "about.title": "Engineering focused on solving real problems",
+    "about.jobTitle": "Software Development Technician",
     "about.bio1":
-      "My name is Marcos Pirchio Giani, I'm 23 years old. I hold a Software Development Technician degree, and I'm currently pursuing a degree in IT Management at Universidad Argentina de la Empresa (UADE). Throughout my studies I've worked on several projects, including dynamic web platforms and RESTful APIs, applying solid development practices and teamwork.",
+      "I'm a software developer specialized in building web applications, management systems, and automations aimed at solving concrete problems. I work mainly with Java, Spring Boot, React, Python, and databases, combining technical development with a practical view of the product and the business.",
     "about.bio2":
-      "I'm currently looking for new job opportunities in systems, preferably full stack development, though I'm fully able and willing to adapt to different areas. I'm ready to learn whatever it takes and motivated to add real value to real projects.",
+      "I like being involved in the whole process: understanding the need, designing the solution, building a maintainable architecture, integrating tools, and shipping the system to production.\nI'm currently pursuing a degree in IT Management at UADE, and I keep deepening my knowledge of AI agents and automation.",
 
     "education.eyebrow": "Education",
     "education.title": "Education",

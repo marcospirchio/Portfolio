@@ -22,19 +22,29 @@ export function Education() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="mt-14 flex items-start"
+          className="mt-14"
         >
-          {education.map((item, index) => (
-            <Fragment key={item.degree.es}>
-              <div className="flex max-w-[220px] flex-col sm:max-w-xs">
-                <span className="relative flex h-3 w-3 items-center justify-center">
+          <div className="flex items-center">
+            {education.map((item, index) => (
+              <Fragment key={item.degree.es}>
+                <span className="relative flex h-3 w-3 shrink-0 items-center justify-center">
                   {item.current && (
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-50" />
                   )}
                   <span className="relative inline-flex h-3 w-3 rounded-full border-2 border-accent bg-bg" />
                 </span>
 
-                <span className="mt-3 text-xs font-medium uppercase tracking-wide text-muted">
+                {index < education.length - 1 && (
+                  <div className="h-px flex-1 bg-border mx-3 sm:mx-6" />
+                )}
+              </Fragment>
+            ))}
+          </div>
+
+          <div className="mt-3 flex items-start justify-between gap-6">
+            {education.map((item) => (
+              <div key={item.degree.es} className="flex max-w-[220px] flex-col sm:max-w-xs">
+                <span className="text-xs font-medium uppercase tracking-wide text-muted">
                   {item.period[language]}
                 </span>
                 <h3 className="mt-1 font-display text-base font-medium leading-snug text-fg sm:text-lg">
@@ -51,12 +61,8 @@ export function Education() {
                   {item.status[language]}
                 </span>
               </div>
-
-              {index < education.length - 1 && (
-                <div className="mt-[5px] h-px flex-1 bg-border mx-3 sm:mx-6" />
-              )}
-            </Fragment>
-          ))}
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
