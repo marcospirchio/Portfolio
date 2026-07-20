@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #faf8f5;
+  --fg: #1a1714;
+  --muted: #6b6459;
+  --accent: #c4632e;
+  --accent-fg: #fff8f2;
+  --accent-soft: #c4632e1a;
+  --surface: #ffffff;
+  --border: #e8e3db;
+  --success: #4c7a5b;
+  --success-soft: #4c7a5b1a;
+}
+
+.dark {
+  --bg: #121110;
+  --fg: #f5f1ec;
+  --muted: #a8a196;
+  --accent: #e08248;
+  --accent-fg: #1a1210;
+  --accent-soft: #e082481f;
+  --surface: #1b1917;
+  --border: #2a2723;
+  --success: #6fa37e;
+  --success-soft: #6fa37e26;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-mono-jb);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes flow-line {
+  0% {
+    background-position: 0% -120%;
+  }
+  100% {
+    background-position: 0% 220%;
+  }
+}
+
+.animate-flow-line {
+  background-image: linear-gradient(to bottom, transparent 0%, var(--accent) 50%, transparent 100%);
+  background-size: 100% 55%;
+  background-repeat: no-repeat;
+  animation: flow-line 1.8s linear infinite;
+}
+
