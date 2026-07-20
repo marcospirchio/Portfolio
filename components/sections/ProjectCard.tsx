@@ -26,11 +26,15 @@ export function ProjectCard({ project, onVideoClick }: ProjectCardProps) {
       className="h-full"
     >
       <Card
-        className={`group flex h-full flex-col overflow-hidden ${project.featured ? "ring-1 ring-accent/40" : ""
+        className={`group flex h-full flex-col overflow-hidden ${project.featured
+            ? "ring-1 ring-accent/40"
+            : project.secondary
+              ? "ring-1 ring-accent/20"
+              : ""
           }`}
       >
         <div
-          className={`relative shrink- overflow-hidden ${project.featured ? "aspect-[16/10]" : "aspect-[4/3]"
+          className={`relative shrink- overflow-hidden ${project.featured || project.secondary ? "aspect-[16/10]" : "aspect-[4/3]"
             }`}
         >
           {project.image ? (
@@ -52,6 +56,11 @@ export function ProjectCard({ project, onVideoClick }: ProjectCardProps) {
           {project.featured && (
             <span className="absolute left-4 top-4 rounded-full bg-fg px-3 py-1 text-xs font-semibold text-bg">
               #1
+            </span>
+          )}
+          {project.secondary && (
+            <span className="absolute left-4 top-4 rounded-full bg-surface/90 px-3 py-1 text-xs font-semibold text-fg ring-1 ring-accent/30">
+              #2
             </span>
           )}
         </div>

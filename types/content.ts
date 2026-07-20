@@ -19,6 +19,7 @@ export interface Project {
   imageFit?: "cover" | "contain";
   links: ProjectLinks;
   featured?: boolean;
+  secondary?: boolean;
 }
 
 export interface Service {
@@ -60,13 +61,6 @@ export interface TechCategory {
 
 export interface ProcessStep {
   number: string;
-  title: Bilingual;
-  description: Bilingual;
-}
-
-export interface ArchitectureLayerData {
-  id: "interface" | "logic" | "integrations" | "data" | "intelligence";
-  icon: "monitor" | "logic" | "link" | "database" | "brain";
   title: Bilingual;
   description: Bilingual;
 }

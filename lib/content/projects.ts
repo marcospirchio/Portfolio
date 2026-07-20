@@ -22,8 +22,27 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "securehire",
+    id: "tribuna-river",
     order: 2,
+    title: "Tribuna River",
+    secondary: true,
+    category: {
+      es: "Web App",
+      en: "Web App",
+    },
+    description: {
+      es: "Aplicación web para registrar la asistencia a partidos de River, explorar el historial del club y visualizar estadísticas personales. Integra datos históricos obtenidos mediante scraping y actualizaciones automáticas del fixture.",
+      en: "Web application to track attendance at River Plate matches, explore the club's history, and visualize personal stats. Integrates historical data gathered through scraping and automatic fixture updates.",
+    },
+    tech: ["Java", "Spring Boot", "PostgreSQL", "Next.js", "Python"],
+    image: "/images/tribunariver.png",
+    links: {
+      demo: "https://tribunariver.com",
+    },
+  },
+  {
+    id: "securehire",
+    order: 3,
     title: "SecureHire",
     category: {
       es: "SaaS con IA",
@@ -42,7 +61,7 @@ export const projects: Project[] = [
   },
   {
     id: "nordic-home",
-    order: 3,
+    order: 4,
     title: "Nordic Home",
     category: {
       es: "E-commerce",
@@ -60,7 +79,7 @@ export const projects: Project[] = [
   },
   {
     id: "rutear",
-    order: 4,
+    order: 5,
     title: "RuteAR",
     category: {
       es: "Web App",
@@ -79,7 +98,7 @@ export const projects: Project[] = [
   },
   {
     id: "propsuite",
-    order: 5,
+    order: 6,
     title: "Propsuite",
     category: {
       es: "SaaS",
@@ -97,7 +116,7 @@ export const projects: Project[] = [
   },
   {
     id: "autopartes",
-    order: 6,
+    order: 7,
     title: "Sistema de Gestión de Autopartes",
     category: {
       es: "Sistema de gestión",

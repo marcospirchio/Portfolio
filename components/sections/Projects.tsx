@@ -13,7 +13,7 @@ export function Projects() {
   const [video, setVideo] = useState<{ url: string; title: string } | null>(null);
 
   const sorted = [...projects].sort((a, b) => a.order - b.order);
-  const [featured, ...rest] = sorted;
+  const [featured, secondary, ...rest] = sorted;
 
   return (
     <section id="projects" className="px-4 py-24 md:px-6">
@@ -32,13 +32,17 @@ export function Projects() {
           />
         </motion.div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-3">
+        <div className="grid items-start gap-6 lg:grid-cols-3">
+          <div className="lg:col-span-2">
             <ProjectCard
               project={featured}
               onVideoClick={(url, title) => setVideo({ url, title })}
             />
           </div>
+          <ProjectCard
+            project={secondary}
+            onVideoClick={(url, title) => setVideo({ url, title })}
+          />
           {rest.map((project) => (
             <ProjectCard
               key={project.id}
