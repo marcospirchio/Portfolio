@@ -43,8 +43,8 @@ export function ProjectCard({ project, onVideoClick }: ProjectCardProps) {
               alt={project.title}
               fill
               sizes={project.featured ? "(min-width: 1024px) 60vw, 100vw" : "(min-width: 1024px) 33vw, 100vw"}
-              className={`${project.imageFit === "contain" ? "object-contain bg-white" : "object-cover"
-                } ${project.id === "autoturnos" ? "scale-[1.05] !h-[calc(100%+4px)] !top-[-1px]" : "transition-transform duration-500 group-hover:scale-105"
+              className={`transition-transform duration-500 ${project.imageFit === "contain" ? "object-contain bg-white" : "object-cover"
+                } ${project.id === "autoturnos" ? "scale-[1.05] !h-[calc(100%+4px)] !top-[-1px] group-hover:scale-[1.1]" : "group-hover:scale-105"
                 }`}
             />
           ) : (

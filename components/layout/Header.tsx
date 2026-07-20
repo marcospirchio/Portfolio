@@ -7,7 +7,10 @@ import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { useTheme } from "@/lib/theme/ThemeProvider";
 import { Button, LinkButton } from "@/components/ui/Button";
 
-const CV_URL = "/cv/Marcos-Pirchio-Giani-CV.pdf";
+const CV_URLS = {
+  es: "/cv/Marcos-Pirchio-Giani-CV-ES.pdf",
+  en: "/cv/Marcos-Pirchio-Giani-CV-EN.pdf",
+};
 
 const NAV_ITEMS = [
   { id: "projects", key: "nav.work" },
@@ -27,6 +30,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+  const cvUrl = CV_URLS[language];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
@@ -85,7 +89,7 @@ export function Header() {
             <span className={language === "en" ? "text-accent" : ""}>EN</span>
           </button>
           <LinkButton
-            href={CV_URL}
+            href={cvUrl}
             external
             variant="outline"
             size="md"
@@ -148,7 +152,7 @@ export function Header() {
               <span className={language === "en" ? "text-accent" : ""}>EN</span>
             </button>
             <LinkButton
-              href={CV_URL}
+              href={cvUrl}
               external
               variant="outline"
               aria-label={t("nav.cvAriaLabel")}
