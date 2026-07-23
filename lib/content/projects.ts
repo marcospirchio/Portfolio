@@ -61,7 +61,7 @@ export const projects: Project[] = [
   },
   {
     id: "nordic-home",
-    order: 4,
+    order: 5,
     title: "Nordic Home",
     category: {
       es: "E-commerce",
@@ -79,7 +79,7 @@ export const projects: Project[] = [
   },
   {
     id: "rutear",
-    order: 5,
+    order: 4,
     title: "RuteAR",
     category: {
       es: "Web App",
