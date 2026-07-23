@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { motion } from "motion/react";
-import { FileText, Menu, Moon, Sun, X } from "lucide-react";
+import { FileText, GraduationCap, Menu, Moon, Sun, X } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { useTheme } from "@/lib/theme/ThemeProvider";
 import { Button, LinkButton } from "@/components/ui/Button";
@@ -30,7 +31,18 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+  const router = useRouter();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const cvUrl = CV_URLS[language];
+
+  function goToSection(id: string) {
+    if (isHome) {
+      scrollToSection(id);
+    } else {
+      router.push(`/#${id}`);
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
@@ -51,7 +63,7 @@ export function Header() {
     >
       <nav className="container mx-auto flex items-center justify-between px-4 md:px-6 py-4">
         <button
-          onClick={() => scrollToSection("hero")}
+          onClick={() => goToSection("hero")}
           className="font-display text-xl font-medium text-fg"
           aria-label="Ir al inicio"
         >
@@ -64,11 +76,20 @@ export function Header() {
               key={item.id}
               variant="ghost"
               size="md"
-              onClick={() => scrollToSection(item.id)}
+              onClick={() => goToSection(item.id)}
             >
               {t(item.key)}
             </Button>
           ))}
+          <LinkButton
+            href="/estudios"
+            variant="ghost"
+            size="md"
+            className={pathname?.startsWith("/estudios") ? "text-accent" : ""}
+          >
+            <GraduationCap className="h-4 w-4" />
+            {t("nav.estudios")}
+          </LinkButton>
         </div>
 
         <div className="hidden md:flex items-center gap-3">
@@ -98,7 +119,7 @@ export function Header() {
             <FileText className="h-4 w-4" />
             {t("nav.cv")}
           </LinkButton>
-          <LinkButton href="#contact" size="md" onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }}>
+          <LinkButton href="#contact" size="md" onClick={(e) => { e.preventDefault(); goToSection("contact"); }}>
             {t("nav.letsTalk")}
           </LinkButton>
         </div>
@@ -126,13 +147,22 @@ export function Header() {
                 variant="ghost"
                 className="justify-start"
                 onClick={() => {
-                  scrollToSection(item.id);
+                  goToSection(item.id);
                   setMenuOpen(false);
                 }}
               >
                 {t(item.key)}
               </Button>
             ))}
+            <LinkButton
+              href="/estudios"
+              variant="ghost"
+              className={`justify-start ${pathname?.startsWith("/estudios") ? "text-accent" : ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              <GraduationCap className="h-4 w-4" />
+              {t("nav.estudios")}
+            </LinkButton>
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <button
@@ -166,7 +196,7 @@ export function Header() {
               className="flex-1"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection("contact");
+                goToSection("contact");
                 setMenuOpen(false);
               }}
             >

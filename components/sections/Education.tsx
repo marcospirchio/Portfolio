@@ -2,9 +2,11 @@
 
 import { Fragment } from "react";
 import { motion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 import { education } from "@/lib/content/education";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { LinkButton } from "@/components/ui/Button";
 
 export function Education() {
   const { language, t } = useLanguage();
@@ -62,6 +64,13 @@ export function Education() {
                 </span>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10">
+            <LinkButton href="/estudios" variant="outline" size="md">
+              {t("education.cta")}
+              <ArrowUpRight className="h-4 w-4" />
+            </LinkButton>
           </div>
         </motion.div>
       </div>

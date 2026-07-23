@@ -1,8 +1,9 @@
 "use client";
 
+import { useRouter, usePathname } from "next/navigation";
 import { Mail } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
-import { Button } from "@/components/ui/Button";
+import { Button, LinkButton } from "@/components/ui/Button";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
 
 const NAV_ITEMS = [
@@ -19,7 +20,17 @@ function scrollToSection(id: string) {
 
 export function Footer() {
   const { t } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
   const year = new Date().getFullYear();
+
+  function goToSection(id: string) {
+    if (pathname === "/") {
+      scrollToSection(id);
+    } else {
+      router.push(`/#${id}`);
+    }
+  }
 
   return (
     <footer className="border-t border-border px-4 py-12 md:px-6">
@@ -42,11 +53,18 @@ export function Footer() {
                   key={item.id}
                   variant="ghost"
                   className="justify-start px-0 h-auto py-1 text-muted hover:text-accent"
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => goToSection(item.id)}
                 >
                   {t(item.key)}
                 </Button>
               ))}
+              <LinkButton
+                href="/estudios"
+                variant="ghost"
+                className="justify-start px-0 h-auto py-1 text-muted hover:text-accent"
+              >
+                {t("nav.estudios")}
+              </LinkButton>
             </div>
           </div>
 

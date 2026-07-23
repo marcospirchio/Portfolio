@@ -12,6 +12,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "nav.langSwitchLabel": "Cambiar a inglés",
     "nav.cv": "CV",
     "nav.cvAriaLabel": "Ver o descargar CV en PDF",
+    "nav.estudios": "Estudios",
 
     "hero.role": "Desarrollador Full Stack",
     "hero.subtitle":
@@ -43,6 +44,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     "education.eyebrow": "Formación académica",
     "education.title": "Formación académica",
+    "education.cta": "Ver progreso de la carrera",
 
     "tech.eyebrow": "Stack tecnológico",
     "tech.title": "Tecnologías que utilizo",
@@ -76,6 +78,45 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.linksHeading": "Enlaces",
     "footer.contactHeading": "Contacto",
     "footer.rights": "Todos los derechos reservados.",
+
+    "estudios.back": "Volver al inicio",
+    "estudios.eyebrow": "Progreso académico",
+    "estudios.title": "Mi carrera, materia por materia",
+    "estudios.subtitle":
+      "Seguimiento en vivo de mi cursada en UADE. La Tecnicatura es el título intermedio de la Licenciatura: todas sus materias forman parte del plan completo.",
+    "estudios.institution": "UADE",
+
+    "estudios.unlock.eyebrow": "Título intermedio",
+    "estudios.unlock.locked": "Título en progreso",
+    "estudios.unlock.unlocked": "¡Título desbloqueado!",
+    "estudios.unlock.subtitle": "Se obtiene al completar todas las materias marcadas con este ícono",
+
+    "estudios.stats.progress": "Progreso",
+    "estudios.stats.subjects": "Materias aprobadas",
+    "estudios.stats.average": "Promedio",
+    "estudios.stats.remaining": "Materias restantes",
+
+    "estudios.licenciatura.title": "Licenciatura en Gestión de las Tecnologías de la Información",
+    "estudios.licenciatura.inProgress": "En curso",
+
+    "estudios.flow.title": "Plan de estudios",
+    "estudios.flow.subtitle":
+      "Cada recuadro es una materia; las líneas representan una correlatividad aproximada según la progresión de contenidos (no es la tabla oficial de la universidad). Tocá una materia para resaltar su camino.",
+    "estudios.flow.year": "Año",
+    "estudios.flow.tecBadge": "Título Técnico",
+
+    "estudios.legend.aprobada": "Aprobada",
+    "estudios.legend.disponible": "Disponible",
+    "estudios.legend.bloqueada": "Bloqueada",
+    "estudios.legend.final": "Final pendiente",
+
+    "estudios.card.grade": "Nota",
+    "estudios.card.hours": "hs.",
+    "estudios.card.mode.aprobado": "Examen final",
+    "estudios.card.mode.promocion": "Promoción",
+    "estudios.card.mode.equivalencia": "Equivalencia interna",
+    "estudios.card.prerequisites": "Requiere",
+    "estudios.card.none": "Sin correlativas",
   },
   en: {
     "nav.work": "Work",
@@ -88,6 +129,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "nav.langSwitchLabel": "Switch to Spanish",
     "nav.cv": "CV",
     "nav.cvAriaLabel": "View or download CV as PDF",
+    "nav.estudios": "Studies",
 
     "hero.role": "Full Stack Developer",
     "hero.subtitle":
@@ -119,6 +161,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     "education.eyebrow": "Education",
     "education.title": "Education",
+    "education.cta": "See degree progress",
 
     "tech.eyebrow": "Tech stack",
     "tech.title": "Technologies I use",
@@ -152,5 +195,44 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.linksHeading": "Links",
     "footer.contactHeading": "Contact",
     "footer.rights": "All rights reserved.",
+
+    "estudios.back": "Back to home",
+    "estudios.eyebrow": "Academic progress",
+    "estudios.title": "My degree, course by course",
+    "estudios.subtitle":
+      "A live tracker of my coursework at UADE. The Technical Degree is the intermediate title within the Bachelor's degree: all of its courses are part of the full plan.",
+    "estudios.institution": "UADE",
+
+    "estudios.unlock.eyebrow": "Intermediate degree",
+    "estudios.unlock.locked": "Degree in progress",
+    "estudios.unlock.unlocked": "Degree unlocked!",
+    "estudios.unlock.subtitle": "Earned by completing every course marked with this icon",
+
+    "estudios.stats.progress": "Progress",
+    "estudios.stats.subjects": "Courses passed",
+    "estudios.stats.average": "Average grade",
+    "estudios.stats.remaining": "Courses remaining",
+
+    "estudios.licenciatura.title": "B.A. in IT Management",
+    "estudios.licenciatura.inProgress": "In progress",
+
+    "estudios.flow.title": "Study plan",
+    "estudios.flow.subtitle":
+      "Each box is a course; the lines represent an approximate prerequisite chain based on content progression (not the university's official table). Tap a course to trace its path.",
+    "estudios.flow.year": "Year",
+    "estudios.flow.tecBadge": "Technical Degree",
+
+    "estudios.legend.aprobada": "Passed",
+    "estudios.legend.disponible": "Available",
+    "estudios.legend.bloqueada": "Locked",
+    "estudios.legend.final": "Final exam pending",
+
+    "estudios.card.grade": "Grade",
+    "estudios.card.hours": "hrs.",
+    "estudios.card.mode.aprobado": "Final exam",
+    "estudios.card.mode.promocion": "Direct pass",
+    "estudios.card.mode.equivalencia": "Internal equivalence",
+    "estudios.card.prerequisites": "Requires",
+    "estudios.card.none": "No prerequisites",
   },
 };

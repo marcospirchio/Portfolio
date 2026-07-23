@@ -81,3 +81,29 @@ export interface Education {
   status: Bilingual;
   current?: boolean;
 }
+
+export type CareerId = "tecnicatura" | "licenciatura";
+
+/** Estado real de la materia según el sistema académico. */
+export type SubjectStatus = "aprobada" | "final-pendiente" | "pendiente";
+
+/** Cómo se aprobó (o se aprobará) la materia. */
+export type SubjectMode = "aprobado" | "promocion" | "equivalencia";
+
+export interface Subject {
+  /** Código de la materia. Cuando hay equivalencia interna, incluye ambos códigos. */
+  code: string;
+  name: Bilingual;
+  hours: number;
+  /** Año dentro del plan de la Licenciatura (1-4), que es el plan completo. */
+  year: 1 | 2 | 3 | 4;
+  /** Año dentro del plan de la Tecnicatura, solo si la materia forma parte de ese título intermedio. */
+  tecnicaturaYear?: 1 | 2 | 3;
+  careers: CareerId[];
+  status: SubjectStatus;
+  grade?: number;
+  mode?: SubjectMode;
+  note?: Bilingual;
+  /** Códigos de materias correlativas previas (aproximado, no es la tabla oficial de correlatividades). */
+  prerequisites?: string[];
+}
