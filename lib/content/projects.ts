@@ -72,7 +72,7 @@ export const projects: Project[] = [
       en: "Bot that automates buying River Plate match tickets on RiverID: detects when sales open and completes the entire purchase flow in seconds, no manual steps. Monitored via Telegram with separate channels for health, errors, and purchase outcome (whether it succeeded or needs to be finished manually).",
     },
     tech: ["Playwright", "TypeScript", "Node.js", "Telegram Bot API"],
-    image: null,
+    image: "/images/river-bot.png",
     links: {
       video: "/video/river-bot-demo.mp4",
     },

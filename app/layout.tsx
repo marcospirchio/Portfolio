@@ -20,10 +20,33 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const title = "Marcos Pirchio Giani | Desarrollador Full Stack";
+const description =
+  "Técnico en Desarrollo de Software especializado en desarrollo Full Stack. Creación de soluciones robustas y escalables con Java, Spring Boot, React y Next.js.";
+
 export const metadata: Metadata = {
-  title: "Marcos Pirchio Giani | Desarrollador Full Stack",
-  description:
-    "Técnico en Desarrollo de Software especializado en desarrollo Full Stack. Creación de soluciones robustas y escalables con Java, Spring Boot, React y Next.js.",
+  metadataBase: new URL("https://marcospirchio.dev"),
+  title,
+  description,
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "https://marcospirchio.dev",
+    siteName: title,
+    images: [{ url: "/images/og-image.png", width: 1731, height: 909 }],
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/og-image.png"],
+  },
 };
 
 export default function RootLayout({
