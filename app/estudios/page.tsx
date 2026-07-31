@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Progreso académico | Marcos Pirchio Giani",
   description:
     "Seguimiento en vivo de la Tecnicatura Universitaria en Desarrollo de Software y la Licenciatura en Gestión de las Tecnologías de la Información en UADE.",
+  alternates: {
+    canonical: "https://marcospirchio.dev/estudios",
+  },
 };
 
 export default function EstudiosPage() {
