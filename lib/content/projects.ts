@@ -42,7 +42,7 @@ export const projects: Project[] = [
   },
   {
     id: "securehire",
-    order: 3,
+    order: 4,
     title: "SecureHire",
     category: {
       es: "SaaS con IA",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
   },
   {
     id: "rutear",
-    order: 4,
+    order: 3,
     title: "RuteAR",
     category: {
       es: "Web App",
