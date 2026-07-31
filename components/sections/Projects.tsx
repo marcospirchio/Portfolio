@@ -10,7 +10,9 @@ import { VideoModal } from "./VideoModal";
 
 export function Projects() {
   const { t } = useLanguage();
-  const [video, setVideo] = useState<{ url: string; title: string } | null>(null);
+  const [video, setVideo] = useState<{ url: string; title: string; screenshots?: string[] } | null>(
+    null
+  );
 
   const sorted = [...projects].sort((a, b) => a.order - b.order);
   const [featured, secondary, ...rest] = sorted;
@@ -36,18 +38,18 @@ export function Projects() {
           <div className="lg:col-span-2">
             <ProjectCard
               project={featured}
-              onVideoClick={(url, title) => setVideo({ url, title })}
+              onVideoClick={(url, title, screenshots) => setVideo({ url, title, screenshots })}
             />
           </div>
           <ProjectCard
             project={secondary}
-            onVideoClick={(url, title) => setVideo({ url, title })}
+            onVideoClick={(url, title, screenshots) => setVideo({ url, title, screenshots })}
           />
           {rest.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
-              onVideoClick={(url, title) => setVideo({ url, title })}
+              onVideoClick={(url, title, screenshots) => setVideo({ url, title, screenshots })}
             />
           ))}
         </div>
@@ -58,6 +60,7 @@ export function Projects() {
         onClose={() => setVideo(null)}
         videoUrl={video?.url ?? ""}
         title={video?.title ?? ""}
+        screenshots={video?.screenshots}
       />
     </section>
   );

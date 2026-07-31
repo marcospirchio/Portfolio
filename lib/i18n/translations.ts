@@ -26,7 +26,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "projects.subtitle":
       "De SaaS con IA a sistemas de gestión a medida — cada proyecto resuelve un problema concreto.",
     "projects.viewCode": "Ver código",
-    "projects.viewDemo": "Ver demo",
+    "projects.viewDemo": "Visitar sitio",
     "projects.viewVideo": "Video",
     "projects.imagePending": "Captura próximamente",
 
@@ -143,7 +143,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "projects.subtitle":
       "From AI-powered SaaS to custom management systems — every project solves a concrete problem.",
     "projects.viewCode": "View code",
-    "projects.viewDemo": "View demo",
+    "projects.viewDemo": "Visit site",
     "projects.viewVideo": "Video",
     "projects.imagePending": "Screenshot coming soon",
 

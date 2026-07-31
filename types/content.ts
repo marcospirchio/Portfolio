@@ -18,6 +18,7 @@ export interface Project {
   image: string | null;
   imageFit?: "cover" | "contain";
   links: ProjectLinks;
+  screenshots?: string[];
   featured?: boolean;
   secondary?: boolean;
 }

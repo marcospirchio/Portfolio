@@ -3,15 +3,17 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
   videoUrl: string;
   title: string;
+  screenshots?: string[];
 }
 
-export function VideoModal({ isOpen, onClose, videoUrl, title }: VideoModalProps) {
+export function VideoModal({ isOpen, onClose, videoUrl, title, screenshots }: VideoModalProps) {
   useEffect(() => {
     if (!isOpen) return;
     const onKeyDown = (e: KeyboardEvent) => {
@@ -56,6 +58,18 @@ export function VideoModal({ isOpen, onClose, videoUrl, title }: VideoModalProps
               className="aspect-video w-full bg-black"
               aria-label={title}
             />
+            {screenshots && screenshots.length > 0 && (
+              <div className="flex gap-3 overflow-x-auto p-4">
+                {screenshots.map((src) => (
+                  <div
+                    key={src}
+                    className="relative h-28 w-52 shrink-0 overflow-hidden rounded-lg ring-1 ring-border"
+                  >
+                    <Image src={src} alt={title} fill className="object-cover" sizes="208px" />
+                  </div>
+                ))}
+              </div>
+            )}
           </motion.div>
         </motion.div>
       )}

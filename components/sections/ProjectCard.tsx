@@ -11,11 +11,28 @@ import { GithubIcon } from "@/components/ui/icons";
 
 interface ProjectCardProps {
   project: Project;
-  onVideoClick: (url: string, title: string) => void;
+  onVideoClick: (url: string, title: string, screenshots?: string[]) => void;
 }
 
 export function ProjectCard({ project, onVideoClick }: ProjectCardProps) {
   const { language, t } = useLanguage();
+
+  const primaryLink = project.links.demo
+    ? { type: "demo" as const, href: project.links.demo }
+    : project.links.video
+      ? { type: "video" as const, href: project.links.video }
+      : project.links.github
+        ? { type: "github" as const, href: project.links.github }
+        : null;
+
+  const handleImageActivate = () => {
+    if (!primaryLink) return;
+    if (primaryLink.type === "video") {
+      onVideoClick(primaryLink.href, project.title, project.screenshots);
+    } else {
+      window.open(primaryLink.href, "_blank", "noopener,noreferrer");
+    }
+  };
 
   return (
     <motion.div
@@ -34,8 +51,30 @@ export function ProjectCard({ project, onVideoClick }: ProjectCardProps) {
           }`}
       >
         <div
+          role={primaryLink ? "button" : undefined}
+          tabIndex={primaryLink ? 0 : undefined}
+          onClick={primaryLink ? handleImageActivate : undefined}
+          onKeyDown={
+            primaryLink
+              ? (event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    handleImageActivate();
+                  }
+                }
+              : undefined
+          }
+          aria-label={
+            primaryLink
+              ? primaryLink.type === "demo"
+                ? t("projects.viewDemo")
+                : primaryLink.type === "github"
+                  ? t("projects.viewCode")
+                  : t("projects.viewVideo")
+              : undefined
+          }
           className={`relative shrink- overflow-hidden ${project.featured || project.secondary ? "aspect-[16/10]" : "aspect-[4/3]"
-            }`}
+            } ${primaryLink ? "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg" : ""}`}
         >
           {project.image ? (
             <Image
@@ -106,7 +145,7 @@ export function ProjectCard({ project, onVideoClick }: ProjectCardProps) {
               <Button
                 variant="outline"
                 size="md"
-                onClick={() => onVideoClick(project.links.video!, project.title)}
+                onClick={() => onVideoClick(project.links.video!, project.title, project.screenshots)}
               >
                 <Play className="h-4 w-4" />
                 {t("projects.viewVideo")}

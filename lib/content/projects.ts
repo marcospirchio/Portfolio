@@ -18,7 +18,7 @@ export const projects: Project[] = [
     image: "/images/autoturnos-og-image.png",
     imageFit: "contain",
     links: {
-      demo: "https://autoturnos.tech",
+      demo: "https://autoturnos.com.ar",
     },
   },
   {
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     tech: ["Java", "Spring Boot", "PostgreSQL", "Next.js", "Python"],
     image: "/images/tribunariver.png",
     links: {
-      demo: "https://tribunariver.com",
+      demo: "https://tribunariver.com.ar",
     },
   },
   {
@@ -57,6 +57,24 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/marcospirchio/SecureHire",
       video: "/video/securehire-demo.mp4",
+    },
+  },
+  {
+    id: "river-tickets-bot",
+    order: 3.5,
+    title: "Bot Entradas River",
+    category: {
+      es: "Automatización",
+      en: "Automation",
+    },
+    description: {
+      es: "Bot que automatiza la compra de entradas para los partidos de River en RiverID: detecta la apertura de la venta y completa todo el flujo de compra en segundos, sin intervención manual. Reporta cada estado por Discord, incluyendo si logró comprar la entrada o si hay que terminarla a mano.",
+      en: "Bot that automates buying River Plate match tickets on RiverID: detects when sales open and completes the entire purchase flow in seconds, no manual steps. Reports every status via Discord, including whether it succeeded or needs to be finished manually.",
+    },
+    tech: ["Python", "Discord API"],
+    image: null,
+    links: {
+      video: "/video/river-bot-demo.mp4",
     },
   },
   {
@@ -93,7 +111,7 @@ export const projects: Project[] = [
     image: "/images/rutear.png",
     links: {
       github: "https://github.com/marcospirchio/CalculadoraDeCombustible",
-      demo: "https://calculadora-de-combustible.vercel.app/",
+      demo: "https://rutearapp.com.ar",
     },
   },
   {
