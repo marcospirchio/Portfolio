@@ -68,10 +68,10 @@ export const projects: Project[] = [
       en: "Automation",
     },
     description: {
-      es: "Bot que automatiza la compra de entradas para los partidos de River en RiverID: detecta la apertura de la venta y completa todo el flujo de compra en segundos, sin intervención manual. Reporta cada estado por Discord, incluyendo si logró comprar la entrada o si hay que terminarla a mano.",
-      en: "Bot that automates buying River Plate match tickets on RiverID: detects when sales open and completes the entire purchase flow in seconds, no manual steps. Reports every status via Discord, including whether it succeeded or needs to be finished manually.",
+      es: "Bot que automatiza la compra de entradas para los partidos de River en RiverID: detecta la apertura de la venta y completa todo el flujo de compra en segundos, sin intervención manual. Monitoreo por Telegram con canales separados de salud, errores y resultado de la compra (si consiguió la entrada o hay que terminarla a mano).",
+      en: "Bot that automates buying River Plate match tickets on RiverID: detects when sales open and completes the entire purchase flow in seconds, no manual steps. Monitored via Telegram with separate channels for health, errors, and purchase outcome (whether it succeeded or needs to be finished manually).",
     },
-    tech: ["Python", "Discord API"],
+    tech: ["Playwright", "TypeScript", "Node.js", "Telegram Bot API"],
     image: null,
     links: {
       video: "/video/river-bot-demo.mp4",
