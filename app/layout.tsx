@@ -52,6 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@marcoospirchio",
     title,
     description,
     images: [{ url: "/images/og-image.jpg", alt: ogImageAlt }],
